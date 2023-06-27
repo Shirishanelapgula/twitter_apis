@@ -1,0 +1,85 @@
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "username": "adam_richard",
+  "password": "richard_567",
+  "name": "Adam Richard",
+  "gender": "male"
+}
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username":"JoeBiden",
+  "password":"biden@123"
+}
+
+###
+
+
+
+GET http://localhost:3000/user/tweets/feed/
+Authorization: Brear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvZUJpZGVuIiwiaWF0IjoxNjg3ODU2NDAxfQ.mc-rphFk1FoxIgx2b7LfWcAa5nXVkBQqXtxb9bWtJBY
+
+###
+
+GET http://localhost:3000/user/following/
+Authorization: Brear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvZUJpZGVuIiwiaWF0IjoxNjg3ODU2NDAxfQ.mc-rphFk1FoxIgx2b7LfWcAa5nXVkBQqXtxb9bWtJBY
+
+
+###
+
+
+GET http://localhost:3000/user/followers/
+Authorization: Brear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvZUJpZGVuIiwiaWF0IjoxNjg3ODU2NDAxfQ.mc-rphFk1FoxIgx2b7LfWcAa5nXVkBQqXtxb9bWtJBY
+
+
+###
+
+GET http://localhost:3000/tweets/8/
+Authorization: Brear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvZUJpZGVuIiwiaWF0IjoxNjg3ODU2NDAxfQ.mc-rphFk1FoxIgx2b7LfWcAa5nXVkBQqXtxb9bWtJBY
+
+
+###
+
+GET http://localhost:3000/tweets/8/likes/
+Authorization: Brear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvZUJpZGVuIiwiaWF0IjoxNjg3ODU2NDAxfQ.mc-rphFk1FoxIgx2b7LfWcAa5nXVkBQqXtxb9bWtJBY
+
+
+###
+
+
+GET http://localhost:3000/tweets/8/replies/
+Authorization: Brear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvZUJpZGVuIiwiaWF0IjoxNjg3ODU2NDAxfQ.mc-rphFk1FoxIgx2b7LfWcAa5nXVkBQqXtxb9bWtJBY
+
+
+###
+
+GET http://localhost:3000/user/tweets/
+Authorization: Brear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvZUJpZGVuIiwiaWF0IjoxNjg3ODU2NDAxfQ.mc-rphFk1FoxIgx2b7LfWcAa5nXVkBQqXtxb9bWtJBY
+
+
+
+###
+
+POST http://localhost:3000/user/tweets/
+Authorization: Brear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvZUJpZGVuIiwiaWF0IjoxNjg3ODU2NDAxfQ.mc-rphFk1FoxIgx2b7LfWcAa5nXVkBQqXtxb9bWtJBY
+Content-Type: application/json
+
+
+{
+   "tweet": "The Mornings..."
+}
+
+###
+
+
+DELETE http://localhost:3000/tweets/4/
+Authorization: Brear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvZUJpZGVuIiwiaWF0IjoxNjg3ODU2NDAxfQ.mc-rphFk1FoxIgx2b7LfWcAa5nXVkBQqXtxb9bWtJBY
+
+
+###
