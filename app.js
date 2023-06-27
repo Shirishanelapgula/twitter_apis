@@ -35,6 +35,8 @@ const initializeDbAndServer = async () => {
 
 initializeDbAndServer();
 
+//AUTHENTICATE//
+
 const authenticateToken = async (request, response, next) => {
   const authHeader = request.headers["authorization"];
 
@@ -55,6 +57,10 @@ const authenticateToken = async (request, response, next) => {
     response.send("Invalid JWT Token");
   }
 };
+
+
+
+//REGISTER//
 
 app.post("/register/", async (request, response) => {
   const { username, password, name, gender } = request.body;
@@ -81,6 +87,8 @@ app.post("/register/", async (request, response) => {
   }
 });
 
+
+//LOGIN//
 app.post("/login", async (request, response) => {
   const { username, password } = request.body;
 
@@ -108,6 +116,8 @@ app.post("/login", async (request, response) => {
   }
 });
 
+//API 1//
+
 app.get("/user/tweets/feed/", authenticateToken, async (request, response) => {
   const { username } = request;
 
@@ -124,6 +134,8 @@ app.get("/user/tweets/feed/", authenticateToken, async (request, response) => {
   response.send(data1);
 });
 
+
+//API 2//
 app.get("/user/following/", authenticateToken, async (request, response) => {
   const { username } = request;
 
@@ -138,6 +150,9 @@ app.get("/user/following/", authenticateToken, async (request, response) => {
 
   response.send(data2);
 });
+
+
+//API 3//
 
 app.get("/user/followers/", authenticateToken, async (request, response) => {
   const { username } = request;
@@ -156,6 +171,8 @@ app.get("/user/followers/", authenticateToken, async (request, response) => {
   response.send(data3);
 });
 
+
+//API 4//
 app.get("/tweets/:tweetId/", authenticateToken, async (request, response) => {
   const { username } = request;
   const { tweetId } = request.params;
@@ -194,6 +211,10 @@ app.get("/tweets/:tweetId/", authenticateToken, async (request, response) => {
     response.send("Invalid Request");
   }
 });
+
+
+
+//API 5//
 
 app.get(
   "/tweets/:tweetId/likes/",
@@ -247,6 +268,9 @@ app.get(
     }
   }
 );
+
+
+//API 6//
 
 app.get(
   "/tweets/:tweetId/replies/",
@@ -303,6 +327,8 @@ app.get(
   }
 );
 
+//API 7//
+
 app.get("/user/tweets/", authenticateToken, async (request, response) => {
   const { username } = request;
 
@@ -321,6 +347,9 @@ app.get("/user/tweets/", authenticateToken, async (request, response) => {
   response.send(userTweetsData);
 });
 
+
+//API 8//
+
 app.post("/user/tweets/", authenticateToken, async (request, response) => {
   const { tweet } = request.body;
 
@@ -338,6 +367,10 @@ app.post("/user/tweets/", authenticateToken, async (request, response) => {
 
   response.send("Created a Tweet");
 });
+
+
+//API 8//
+
 
 app.delete(
   "/tweets/:tweetId/",
